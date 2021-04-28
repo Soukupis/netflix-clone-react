@@ -15,7 +15,7 @@ export const Item = styled.div`
   color: white;
   margin-bottom: 10px;
   margin: auto;
-  max-width: 670px;
+  max-width: 700px;
   width: 100%;
 
   &:first-of-type {
@@ -26,7 +26,7 @@ export const Header = styled.h1`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  margin-bottom: 1px;
+  margin: 1px;
   font-size: 26px;
   font-weight: normal;
   background: #303030;
