@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { Link as ReachRouterLink } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -45,12 +45,11 @@ export const TextSmall = styled.p`
   line-height: normal;
   color: #8c8c8c;
 `;
-export const Link = styled(ReactRouterLink)`
-  color: white;
+export const Link = styled(ReachRouterLink)`
+  color: #fff;
   text-decoration: none;
-
   &:hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 `;
 export const Input = styled.input`

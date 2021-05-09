@@ -20,10 +20,10 @@ export default function Signup() {
   const handleSignup = (event) => {
     event.preventDefault();
 
-    firebase
+    return firebase
       .auth()
       .createUserWithEmailAndPassword(emailAddress, password)
-      .then((result) => {
+      .then((result) =>
         result.user
           .updateProfile({
             displayName: firstName,
@@ -31,8 +31,8 @@ export default function Signup() {
           })
           .then(() => {
             history.push(ROUTES.BROWSE);
-          });
-      })
+          })
+      )
       .catch((error) => {
         setFirstName("");
         setEmailAddress("");
@@ -47,9 +47,10 @@ export default function Signup() {
         <Form>
           <Form.Title>Sign Up</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}
+
           <Form.Base onSubmit={handleSignup} method="POST">
             <Form.Input
-              placeholder="First Name"
+              placeholder="First name"
               value={firstName}
               onChange={({ target }) => setFirstName(target.value)}
             />
@@ -62,21 +63,25 @@ export default function Signup() {
               type="password"
               value={password}
               autoComplete="off"
-              placeholder="password"
+              placeholder="Password"
               onChange={({ target }) => setPassword(target.value)}
             />
-            <Form.Submit disabled={isInvalid} type="submit">
+            <Form.Submit
+              disabled={isInvalid}
+              type="submit"
+              data-testid="sign-up"
+            >
               Sign Up
             </Form.Submit>
-            <Form.Text>
-              Already a user?{" "}
-              <Form.Link to={ROUTES.SIGN_IN}>Sign in now.</Form.Link>
-            </Form.Text>
-            <Form.TextSmall>
-              This page is protected by Google reCAPTCHA to ensure you're not a
-              bot. Learn more
-            </Form.TextSmall>
           </Form.Base>
+
+          <Form.Text>
+            Already a user? <Form.Link to="/signin">Sign in now.</Form.Link>
+          </Form.Text>
+          <Form.TextSmall>
+            This page is protected by Google reCAPTCHA to ensure you're not a
+            bot. Learn more.
+          </Form.TextSmall>
         </Form>
       </HeaderContainer>
       <FooterContainer />

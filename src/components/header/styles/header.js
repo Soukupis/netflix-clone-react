@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { Link as ReachRouterLink } from "react-router-dom";
 
 export const Background = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ export const Group = styled.div`
   display: flex;
   align-items: center;
 `;
-export const ButtonLink = styled(ReactRouterLink)`
+export const ButtonLink = styled(ReachRouterLink)`
   display: block;
   background-color: #e50914;
   width: 84px;
@@ -160,7 +160,7 @@ export const SearchInput = styled.input`
   margin-left: ${({ active }) => (active === true ? "10px" : "0")};
   padding: ${({ active }) => (active === true ? "0 10px" : "0")};
   opacity: ${({ active }) => (active === true ? "1" : "0")};
-  width: ${({ active }) => (active === true ? "200px" : "0")};
+  width: ${({ active }) => (active === true ? "200px" : "0px")};
 `;
 export const Profile = styled.div`
   display: flex;
